@@ -8,7 +8,12 @@
 module.exports = {
 
   attributes: {
-
+	identificador:{type:'Number'},
+	nombreUsuario:{type:'String'},
+	claveUsuario:{type:'String'},
+	seccion:{type:'String'},
+	run:{ type:'Number'},
+	estado: {type:'Boolean'}
   }
 };
 

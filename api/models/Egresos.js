@@ -8,7 +8,10 @@
 module.exports = {
 
   attributes: {
-
+  	monto:{type:'Number'},
+  	formaPago:{type:'String'},
+  	idResponsable:{type:'Number'},
+  	fecha:{type:'Number'}
   }
 };
 
