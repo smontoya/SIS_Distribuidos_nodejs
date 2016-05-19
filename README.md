@@ -1,3 +1,16 @@
 # sistemas_distribuidos
 
-a [Sails](http://sailsjs.org) application
+Paso 1:
+Instalar nodejs y npm
+
+Paso 2:
+instalar sails y sails-mongo
+
+paso 3:
+Instalar Mongo > 3 y crear una BD, llamadas sistemas_distribuidos
+
+Paso 4:
+levantar sails
+
+sails lift
+
