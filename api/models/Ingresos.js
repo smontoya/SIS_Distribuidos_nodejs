@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
   	monto:{type:'Number'},
   	formaPago:{type:'String'},
-  	idcajero:{type:'Number'},
+  	//idcajero:{type:'Number'}, //esto es de DB relacionales casi no se usan ID para relaciones
   	fecha:{type:'Number'}
   }
 };
