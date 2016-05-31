@@ -7,9 +7,12 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/AdminLTE.min.css">
+    <link rel="stylesheet" href="/styles/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/styles/font-awesome.min.css">
+    
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <!-- Site wrapper -->
@@ -19,7 +22,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>S</b>D</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Sis</b>dis</span>
+          <span class="logo-lg"><b>Sistemas</b> distribuidos</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -58,12 +61,13 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs">USuario</span>
+                  <img src="/images/profile.jpg" class="user-image" alt="User Image">
+                  <span class="hidden-xs">Usuario</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
+                    <img src="/images/profile.jpg" class="img-circle" alt="User Image">
                     <p>
                       Usuario 
                     </p>
@@ -94,7 +98,7 @@
           <ul class="sidebar-menu">
             <li class="header">Menu Principal</li>
             <li>
-              <a href="/widgets.html">
+              <a href="/usuarios/index">
                 <i class="fa fa-users"></i> <span>Usuarios</span>
               </a>
             </li>
@@ -131,7 +135,7 @@
             To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
             For example, here are a few things you could do:
 
-                + Import templates from other directories
+                   + Import templates from other directories
                 + Use a different template engine (handlebars, jade, dust, etc.)
                 + Internationalize your client-side templates using a server-side
                   stringfile before they're served.
@@ -173,8 +177,8 @@
     <script src="/js/plugins/bootstrap/bootstrap.min.js"></script>
     <!-- Admin App -->
     <script src="/js/app.js"></script>
-    <!-- Admin for demo purposes -->
     <script src="/js/demo.js"></script>
+    <!-- Admin for demo purposes -->
 
     <script src="/js/dependencies/sails.io.js"></script>
   </body>

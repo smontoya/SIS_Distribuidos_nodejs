@@ -1,0 +1,13 @@
+<a href="/usuarios/create"><i class="fa fa-plus"></i>+Create</a>
+<ol>
+<% users.forEach( function( model ){ %>
+	<li>
+		<%= model.email %>
+		(<a href="/usuarios/delete/<%= model.id %>">Eliminar</a>
+		|
+		<a href="/usuarios/update/<%= model.id %>">Update</a>
+		|
+		<a href="/usuarios/view/<%=model.id %>">view</a>)
+	</li>
+<% }); %>
+</ol>
