@@ -17,13 +17,13 @@
 
             });
         }else{
-            res.render( "user/create");
+            res.view( "user/create");
         }
     },
 
     index: function (req, res) {
         Usuarios.find().exec(function(err, users) {
-            res.render( 'user/index',{'users':users});
+            res.view( 'user/index',{'users':users});
             return;
 
         });
@@ -33,7 +33,7 @@
         console.log(id);
         Usuarios.findOne(id).exec(function(err,user){
             console.log(user);
-            res.render( 'user/view',{'model':user, layout: 'layout'});
+            res.view( 'user/view',{'model':user, layout: 'layout'});
         });
     }
 };
