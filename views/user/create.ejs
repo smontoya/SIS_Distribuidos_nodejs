@@ -1,17 +1,47 @@
 <a href="/usuarios/index">Ver todos</a>
-<h2>User Create form</h2>
-<form action="/user/create" method="POST">
-    <table>
 
-    <tr><td>Nombres<td>
-    <input type="text" name="User[fName]"><br/>
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Nuevo Usuario</h3>
+  </div>
+  <!-- /.box-header -->
+  <!-- form start -->
+  <form role="form" method="POST">
+    <div class="box-body">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="text" class="form-control" name="User[email]" placeholder="Ingrese su email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nombre(s)</label>
+        <input type="text" class="form-control" name="User[nombres]" placeholder="Ingrese su(s) Nombre(s)">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Apellido(s)</label>
+        <input type="text" class="form-control" name="User[apellidos]" placeholder="Ingrese su(s) apellido(s)">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Clave</label>
+        <input type="password" class="form-control" name="User[password]" placeholder="Ingrese su clave">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Sección</label>
+        <input type="text" class="form-control" name="User[seccion]" placeholder="Ingrese su sección">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">RUN</label>
+        <input type="text" class="form-control" name="User[rut]" placeholder="Ingrese su RUN">
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="User[estado]"> Activo
+        </label>
+      </div>
 
-    <tr><td>LastName<td><input type="text" name="User[nombres]"><br/>
+    </div>
 
-    <tr><td>UserName<td><input type="text" name="User[userName]"><br/>
-
-    <tr><td>Password<td><input type="text" name="User[password]"><br/>
-
-    <tr><td>Email</td><td><input type="text" name="User[email]"></td></tr>
-    <tr><td><td><input type="submit" value="Agregra"></td></td>
-</form>
+    <div class="box-footer">
+      <button type="submit" class="btn btn-primary">Agregar</button>
+    </div>
+  </form>
+</div>
