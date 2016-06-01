@@ -3,17 +3,52 @@
 |<a href="/usuarios/index">List</a>
 |<a href="/usuarios/update/<%= model.id %>">Update</a>
 
-<h2>View <%=model.email%></h2>
-<ul>
-<li>nombres:<%=model.nombres %></li>
 
-<li>Apellidos:<%=model.apellidos %></li>
+<div class="box box-widget widget-user-2">
+	<!-- Add the bg color to the header using any of the bg-* classes -->
+	<div class="widget-user-header bg-yellow">
+	  <div class="widget-user-image">
+	    <img class="img-circle" src="/images/profile.jpg" alt="User Avatar">
+	  </div>
+	  <!-- /.widget-user-image -->
+	  <h3 class="widget-user-username">
+	  	<%=model.nombres %> <%=model.apellidos %></h3>
+	  <h5 class="widget-user-desc"><%=model.seccion %></h5>
+	</div>
+	<div class="box-footer no-padding">
+	  <ul class="nav nav-stacked">
+	  	<li>
+	    	<a href="#">Nombres
+	    		<span class="pull-right "><%=model.nombres %></span>
+    		</a>
+  		</li>
+  		<li>
+	    	<a href="#">Apellidos
+	    		<span class="pull-right "><%=model.apellidos %></span>
+    		</a>
+  		</li>
+	    <li>
+	    	<a href="#">Correo electrónico 
+	    		<span class="pull-right "><%=model.email %></span>
+    		</a>
+  		</li>
+  		<li>
+	    	<a href="#">RUN 
+	    		<span class="pull-right "><%=model.rut %></span>
+    		</a>
+  		</li>
+
+  		<li>
+	    	<a href="#">Estado
+	    		<span class="pull-right ">
+	    			<% if (model.estado){ %> <i class="fa fa-check fa-2x"></i>
+	    			<%}else{%>
+	    				<i class="fa fa-ban fa-2x"></i>
+	    			<%};%></span>
+    		</a>
+  		</li>
+	  </ul>
 
 
-<li>UserName:<%=model.userName %></li>
-
-<li>Password:<%=model.password %></li>
-
-<li>Email:<%=model.email %></li>
-</ul>
-</code>
+	</div>
+</div>

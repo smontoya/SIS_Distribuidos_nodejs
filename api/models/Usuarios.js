@@ -8,13 +8,13 @@
 module.exports = {
 
   attributes: {
-	email:{type:'Number'},
+	email:{type:'String'},
 	nombres:{type:'String'},
 	apellidos:{type:'String'},
 	password:{type:'String'},
 	seccion:{type:'String'},
-	rut:{ type:'Number'},
-	estado: {type:'Boolean'}
+	rut:{ type:'String'},
+	estado: {type:'Boolean', default: false}
   }
 };
 

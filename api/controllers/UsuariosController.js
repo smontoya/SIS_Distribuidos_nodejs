@@ -8,11 +8,13 @@
  module.exports = {
     create: function (req, res) {
         if(req.method == 'POST' && req.param('User', null) != null){
-            Usuarios.create(req.param('User')).done(function(errmodel){
-            if (err) {
+        	req.param('User')['estado'] = req.param('User')['estado'] == 'on'
+            Usuarios.create(req.param('User')).exec(function(errmodel){
+            if (errmodel) {
+            	console.log(errmodel);
                 res.send("Error:Sorry!Something went Wrong");
             }else {
-                res.send("Successfully Created!");
+                res.redirect('/usuarios/index');
             }
 
             });
