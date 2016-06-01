@@ -46,7 +46,7 @@
             Usuarios.update(id, req.param('User')).exec(function(errmodel){
                 if (errmodel) {
                     console.log(errmodel);
-                    res.send("Error:Sorry!Something went Wrong");
+                    res.send("Error: Sorry! Something went Wrong");
                 }else {
                     res.redirect('/usuarios/index');
                 }
@@ -55,6 +55,23 @@
         else{
             Usuarios.findOne(id).exec(function(err,user){
                 res.view( 'user/update',{'model':user});
+            });
+        }
+    },
+    delete: function(req, res) {
+        console.log("Se llama eliminar 0");     
+        var id = req.param('id', null);
+        if(req.method == 'POST'){
+            Usuarios.findOne(id).exec(function(err, user){
+
+                console.log("Se procede a su eliminación");
+                user.destroy();
+                res.redirect("/usuarios/index");
+            });
+        }
+        else{
+            Usuarios.findOne(id).exec(function(err,user){
+                res.view( 'user/delete',{'model':user});
             });
         }
     }

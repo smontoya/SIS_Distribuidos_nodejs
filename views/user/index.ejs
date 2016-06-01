@@ -17,11 +17,9 @@
       <% users.forEach( function( model ){ %>
         <tr>
           <td>
-            (<a href="/usuarios/delete/<%= model.id %>">Eliminar</a>
-            |
-            <a href="/usuarios/update/<%= model.id %>">Update</a>
-            |
-            <a href="/usuarios/view/<%=model.id %>">view</a>)
+            <a href="/usuarios/delete/<%= model.id %>" title="Eliminar Usuario"><i class="fa fa-trash"></i></a>
+            <a href="/usuarios/update/<%= model.id %>" title="Editar Usuario"><i class="fa fa-pencil"></i></a>
+            <a href="/usuarios/view/<%=model.id %>" title="Ver usuario"><i class="fa fa-eye"></i></a>
           </td>
           <td><%= model.email %></td>
           <td><%= model.nombres %></td>

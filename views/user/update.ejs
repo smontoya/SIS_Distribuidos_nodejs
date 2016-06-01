@@ -1,4 +1,4 @@
-<a href="/usuarios/index">Ver todos</a>
+
 
 <div class="box box-primary">
   <div class="box-header with-border">
@@ -30,7 +30,7 @@
       </div>
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="User[estado]" value="<%=model.estado%>"> Activo
+          <input id="" type="checkbox" name="User[estado]" <%if (model.estado){%>checked<% } %>> Activo
         </label>
       </div>
 
@@ -41,3 +41,7 @@
     </div>
   </form>
 </div>
+
+<a href="/usuarios/index" title="Listar Usuarios" class="btn btn-primary">
+  Listar Usuarios
+</a>

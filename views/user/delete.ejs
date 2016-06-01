@@ -1,0 +1,64 @@
+<code>
+
+
+
+<div class="box box-widget widget-user-2">
+	<!-- Add the bg color to the header using any of the bg-* classes -->
+	<div class="widget-user-header bg-yellow">
+	  <div class="widget-user-image">
+	    <img class="img-circle" src="/images/profile.jpg" alt="User Avatar">
+	  </div>
+	  <!-- /.widget-user-image -->
+	  <h3 class="widget-user-username">
+	  	<%=model.nombres %> <%=model.apellidos %></h3>
+	  <h5 class="widget-user-desc"><%=model.seccion %></h5>
+	</div>
+	<div class="box-footer no-padding">
+	  <ul class="nav nav-stacked">
+	  	<li>
+	    	<a href="#">Nombres
+	    		<span class="pull-right "><%=model.nombres %></span>
+    		</a>
+  		</li>
+  		<li>
+	    	<a href="#">Apellidos
+	    		<span class="pull-right "><%=model.apellidos %></span>
+    		</a>
+  		</li>
+	    <li>
+	    	<a href="#">Correo electrónico 
+	    		<span class="pull-right "><%=model.email %></span>
+    		</a>
+  		</li>
+  		<li>
+	    	<a href="#">RUN 
+	    		<span class="pull-right "><%=model.rut %></span>
+    		</a>
+  		</li>
+
+  		<li>
+	    	<a href="#">Estado
+	    		<span class="pull-right ">
+	    			<% if (model.estado){ %> <i class="fa fa-check fa-2x"></i>
+	    			<%} else {%>
+	    				<i class="fa fa-ban fa-2x"></i>
+	    			<%} ;%></span>
+    		</a>
+  		</li>
+
+	  </ul>
+
+	</div>
+</div>
+
+<div class="alert alert-danger">
+	<h1>¿Realmente desea eliminar este usuario?</h1>
+	<form method="POST">
+		<button class="btn btn-danger" >Confirmar eliminación</button>
+	</form>
+	<a href="/usuarios/index" class="btn btn-primary" >Cancelar</a>
+</div>
+
+<a href="/usuarios/create" title="Crear Usuario" class="btn btn-primary">Crear Usuario</a>
+<a href="/usuarios/index" title="Listar Usuario" class="btn btn-primary">Listar Usuario</a>
+<a href="/usuarios/update/<%= model.id %>" title="Actualizar Usuario" class="btn btn-primary">Actualizar Usuario</a>
