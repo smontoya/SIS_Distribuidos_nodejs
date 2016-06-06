@@ -10,43 +10,38 @@
         if(req.method == 'POST' && req.param('User', null) != null){
             req.param('User')['estado'] = req.param('User')['estado'] == 'on'
             Usuarios.create(req.param('User')).exec(function(errmodel){
-            if (errmodel) {
-                console.log(errmodel);
-                res.send("Error:Sorry!Something went Wrong");
-            }else {
-                res.redirect('/usuarios/index');
-            }
-
+                if (errmodel) {
+                    console.log(errmodel);
+                    res.send("Error:Error al crear el usuario");
+                }else {
+                    res.redirect('/usuarios/index');
+                }
             });
         }else{
             res.view( "user/create");
         }
     },
-
     index: function (req, res) {
         Usuarios.find().exec(function(err, users) {
             res.view( 'user/index',{'users':users});
             return;
-
         });
     },
     view: function (req, res) {
         var id = req.param('id', null);
         console.log(id);
         Usuarios.findOne(id).exec(function(err,user){
-            console.log(user);
             res.view( 'user/view',{'model':user, layout: 'layout'});
         });
     },
     update: function(req, res) {
         var id = req.param('id', null);
         if(req.method == 'POST' && req.param('User', null) != null){
-            console.log("Editanto usuario", id);
-            console.log("Info", req.param("User"));
+            req.param('User')['estado'] = req.param('User')['estado'] == 'on'
             Usuarios.update(id, req.param('User')).exec(function(errmodel){
                 if (errmodel) {
                     console.log(errmodel);
-                    res.send("Error: Sorry! Something went Wrong");
+                    res.send("Error: No se pudo actualizar el usuario");
                 }else {
                     res.redirect('/usuarios/index');
                 }
@@ -59,12 +54,9 @@
         }
     },
     delete: function(req, res) {
-        console.log("Se llama eliminar 0");     
         var id = req.param('id', null);
         if(req.method == 'POST'){
             Usuarios.findOne(id).exec(function(err, user){
-
-                console.log("Se procede a su eliminación");
                 user.destroy();
                 res.redirect("/usuarios/index");
             });
@@ -76,4 +68,3 @@
         }
     }
 };
-
