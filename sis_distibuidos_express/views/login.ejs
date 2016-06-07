@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sistemas distribuidos</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <style type="text/css">
+        body {
+          background-color:#fff;
+          -webkit-font-smoothing: antialiased;
+          font: normal 14px Roboto,arial,sans-serif;
+        }
+
+        .container {
+            padding: 25px;
+            position: fixed;
+        }
+
+        .form-login {
+            background-color: #EDEDED;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 15px;
+            border-color:#d2d2d2;
+            border-width: 5px;
+            box-shadow:0 1px 0 #cfcfcf;
+        }
+
+        h4 { 
+         border:0 solid #fff; 
+         border-bottom-width:1px;
+         padding-bottom:10px;
+         text-align: center;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .wrapper {
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-5 col-md-3">
+                <form class="form-login" role="form" method="POST">
+                    <h4>Iniciar sesion.</h4>
+                    <input type="email" name="email" class="form-control input-sm chat-input" placeholder="Email" required="required" /></br>
+                    <input type="password" name="password" class="form-control input-sm chat-input" placeholder="contraseña"  required="required" /></br>
+                    <div class="wrapper well">
+                        <span class="group-btn">     
+                            <button type="submit" class="btn btn-primary btn-md">Ingresar <i class="fa fa-sign-in"></i></button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="/assets/js/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+    <script src="/assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $("form").submit(function(e){
+            $.ajax({
+                   type: "POST",
+                   url: '/login',
+                   data: $("form").serialize(), // serializes the form's elements.
+                   success: function(data)
+                   {
+                       if (data == 'ok'){
+                            window.location = "/dashboard";
+                       }else{
+
+                            alert(data);
+                        }
+                   }
+                 });
+
+            e.preventDefault(); 
+        });
+
+    </script>
+       
+  </body>
+</html>
