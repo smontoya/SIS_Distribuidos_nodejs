@@ -194,7 +194,7 @@ app.post('/usuarios/delete/:user_id', function (req, res) {
 });
 
 
-mongoose.connect('mongodb://localhost/sistemas_distribuidos', function(err, res) {  
+mongoose.connect('mongodb://192.168.1.1/sistemas_distribuidos', function(err, res) {  
   if(err) {
     console.log('ERROR: connecting to Database. ' + err);
   }

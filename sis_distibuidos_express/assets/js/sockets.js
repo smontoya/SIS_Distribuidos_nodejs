@@ -44,7 +44,7 @@ $(document).ready(function() {
           url: url
         }).done(function() {
           $(this).closest('tr').hide(500).remove();
-          socket.emit('broadcast', {text: "Un usuario ha sido eliminado "});
+          socket.emit('broadcast', {text: "Un usuario ha sido eliminado ", color:"#FF2222"});
         });
       }
     })
@@ -63,8 +63,14 @@ $(document).ready(function() {
 		$('#text-send').val('');
 		socket.emit('multicast', {text: message, room: room});
 	});
-
-	
+	$("#create_user").on("submit", function(){
+		MENSAJE.text = USUARIO + " ha creado un nuevo usuario";
+    	socket.emit('broadcast', {text: MENSAJE.text, color: "#296191"});
+	})
+	$("#update_user").on("submit", function(){
+		MENSAJE.text = USUARIO + " ha actualizado un usuario";
+    	socket.emit('broadcast', {text: MENSAJE.text, color: "#296191"});
+	})
     $('.logout_btn').click(function (data) {
     	MENSAJE.text = USUARIO + " ha cerrado session";
     	socket.emit('broadcast', {text: MENSAJE.text, color: "#296191"});
